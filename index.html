@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traivio: Your AI Guide to North Cyprus</title>
+  <meta name="description" content="Traivio is an AI travel companion for North Cyprus. Chat with a local-savvy guide that builds day-by-day itineraries, finds hidden spots and adapts in real time.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2322d3c5'/%3E%3Cstop offset='1' stop-color='%23ff8a4c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='9' fill='url(%23g)'/%3E%3Cpath d='M9 11h14M16 11v12' stroke='%23070d1f' stroke-width='3.2' stroke-linecap='round'/%3E%3C/svg%3E">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- 1. Navbar -->
+  <header class="nav" id="top">
+    <div class="container nav__inner">
+      <a href="#top" class="logo" aria-label="Traivio home">
+        <span class="logo__mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="30" height="30"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3c5"/><stop offset="1" stop-color="#ff8a4c"/></linearGradient></defs><rect width="32" height="32" rx="9" fill="url(#lg)"/><path d="M9 11h14M16 11v12" stroke="#070d1f" stroke-width="3.2" stroke-linecap="round"/></svg>
+        </span>
+        <span class="logo__text">Traivio</span>
+      </a>
+
+      <nav class="nav__links" id="nav-links" aria-label="Primary">
+        <a href="#how">How it works</a>
+        <a href="#demo">Demo</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="#waitlist" class="btn btn--primary btn--sm nav__cta-mobile">Join waitlist</a>
+      </nav>
+
+      <div class="nav__actions">
+        <a href="#waitlist" class="btn btn--primary btn--sm nav__cta">Join waitlist</a>
+        <button class="nav__toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- 2. Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="aurora">
+          <span class="aurora__blob aurora__blob--teal"></span>
+          <span class="aurora__blob aurora__blob--blue"></span>
+          <span class="aurora__blob aurora__blob--orange"></span>
+        </div>
+        <svg class="cyprus" viewBox="0 0 1000 500" focusable="false">
+          <defs>
+            <linearGradient id="cy-grad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#22d3c5"/>
+              <stop offset=".55" stop-color="#38bdf8"/>
+              <stop offset="1" stop-color="#ff8a4c"/>
+            </linearGradient>
+          <path id="cyprus-path" pathLength="1" d="M28 260C30 270 43.3 304.7 52 328C60.7 351.3 65.3 384 80 400C94.7 416 124.7 418 140 424C155.3 430 152 432.7 172 436C192 439.3 233.3 437.3 260 444C286.7 450.7 314 476 332 476C350 476 350 454 368 444C386 434 418 425.3 440 416C462 406.7 480 395.3 500 388C520 380.7 547.3 380 560 372C572.7 364 562.7 348.7 576 340C589.3 331.3 610.7 324 640 320C669.3 316 738.7 322.7 752 316C765.3 309.3 728.7 290.7 720 280C711.3 269.3 701.3 265.3 700 252C698.7 238.7 702 214 712 200C722 186 738.7 179.3 760 168C781.3 156.7 816.7 146.7 840 132C863.3 117.3 880.7 98.7 900 80C919.3 61.3 956 26 956 20C956 14 916 37.3 900 44C884 50.7 876.7 52 860 60C843.3 68 820 82.7 800 92C780 101.3 763.3 108 740 116C716.7 124 686.7 133.3 660 140C633.3 146.7 615.3 152 580 156C544.7 160 484.7 164 448 164C411.3 164 386.7 160 360 156C333.3 152 301.3 134.7 288 140C274.7 145.3 276 174.7 280 188C284 201.3 318.7 212.7 312 220C305.3 227.3 268.7 230 240 232C211.3 234 165.3 224 140 232C114.7 240 104.7 274 88 280C71.3 286 50 271.3 40 268C30 264.7 26 250 28 260Z"/>
+          </defs>
+          <use href="#cyprus-path" class="cyprus__base"/>
+          <use href="#cyprus-path" class="cyprus__glow"/>
+          <use href="#cyprus-path" class="cyprus__line"/>
+          <g class="cyprus__pins">
+            <g class="pin" style="--d:0s"><circle class="pin__ring" cx="448" cy="174" r="12"/><circle cx="448" cy="174" r="4.5"/><text x="440" y="200" text-anchor="end">Kyrenia</text></g>
+            <g class="pin" style="--d:.15s"><circle class="pin__ring" cx="464" cy="240" r="12"/><circle cx="464" cy="240" r="4.5"/><text x="480" y="262">Nicosia</text></g>
+            <g class="pin" style="--d:.3s"><circle class="pin__ring" cx="688" cy="250" r="12"/><circle cx="688" cy="250" r="4.5"/><text x="672" y="276" text-anchor="end">Famagusta</text></g>
+            <g class="pin" style="--d:.45s"><circle class="pin__ring" cx="902" cy="60" r="12"/><circle cx="902" cy="60" r="4.5"/><text x="880" y="112" text-anchor="middle">Karpaz</text></g>
+          </g>
+        </svg>
+        <div class="grain"></div>
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Now in private beta · North Cyprus</p>
+          <h1 id="hero-title">Your personal <span class="grad">AI guide</span> to North Cyprus</h1>
+          <p class="hero__sub">Tell Traivio how you like to travel. Get a day-by-day plan with the hidden coves, village tavernas and castle viewpoints locals actually go to. The plan changes as your day does.</p>
+          <div class="hero__ctas">
+            <a href="#demo" class="btn btn--primary btn--lg">Plan my trip
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#how" class="btn btn--ghost btn--lg">See how it works</a>
+          </div>
+        </div>
+
+        <div class="hero__visual" id="hero-visual">
+          <div class="tilt" id="phone-tilt">
+          <div class="phone" role="img" aria-label="Phone showing a chat: a traveler asks Traivio for a relaxed day near Kyrenia, and the AI replies with a three-stop plan of Kyrenia Harbour, Bellapais Abbey and a sunset swim at Escape Beach, then suggests dinner at Niazi's.">
+            <div class="phone__notch" aria-hidden="true"></div>
+            <div class="phone__glare" aria-hidden="true"></div>
+            <div class="phone__screen" aria-hidden="true">
+              <div class="chat__head">
+                <span class="chat__avatar">T</span>
+                <div>
+                  <p class="chat__name">Traivio</p>
+                  <p class="chat__status"><span class="dot dot--live"></span> Online · Kyrenia</p>
+                </div>
+              </div>
+              <div class="chat__body" id="chat-body">
+                <div class="bubble bubble--user" data-chat="0">Hi! Can you plan a relaxed day near Kyrenia? No rushing, good food, maybe a swim 🌊</div>
+                <div class="typing" data-chat="typing"><span></span><span></span><span></span></div>
+                <div class="bubble bubble--ai" data-chat="1">
+                  <p>Here's an easy-going day for you ☀️</p>
+                  <ol class="plan">
+                    <li><span class="plan__time">10:00</span><span><b>Kyrenia Harbour</b>: slow coffee by the boats</span></li>
+                    <li><span class="plan__time">13:00</span><span><b>Bellapais Abbey</b>: lunch under the Tree of Idleness</span></li>
+                    <li><span class="plan__time">17:30</span><span><b>Escape Beach</b>: sunset swim, calm water</span></li>
+                  </ol>
+                </div>
+                <div class="bubble bubble--user bubble--short" data-chat="2">Perfect, add a dinner spot? 🍽️</div>
+                <div class="bubble bubble--ai" data-chat="3">Book <b>Niazi's</b> by the harbour for 20:00. Order the full kebab and come hungry 🍢</div>
+              </div>
+              <div class="chat__input">
+                <span>Ask Traivio anything…</span>
+                <span class="chat__send">➤</span>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="float-chip float-chip--beach" data-depth="1.4" aria-hidden="true"><span>🏖️ Golden Beach</span></div>
+          <div class="float-chip float-chip--castle" data-depth="0.9" aria-hidden="true"><span>🏰 St. Hilarion</span></div>
+          <div class="float-chip float-chip--weather" data-depth="1.8" aria-hidden="true"><span>☀️ 28°C · Plan adjusted</span></div>
+          <div class="float-chip float-chip--gem" data-depth="1.1" aria-hidden="true"><span>💎 Hidden gem unlocked</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats strip -->
+    <section class="stats" aria-label="Traivio in numbers">
+      <div class="container">
+        <ul class="stats__list">
+          <li class="stat">
+            <span class="sr-only">50+ hidden spots</span>
+            <strong class="stat__num" aria-hidden="true" data-count="50" data-suffix="+">50+</strong>
+            <span class="stat__label" aria-hidden="true">hidden spots</span>
+          </li>
+          <li class="stat">
+            <span class="sr-only">3 languages: English, Russian and Turkish</span>
+            <strong class="stat__num" aria-hidden="true" data-count="3">3</strong>
+            <span class="stat__label" aria-hidden="true">languages: EN · RU · TR</span>
+          </li>
+          <li class="stat">
+            <span class="sr-only">24/7 AI guide</span>
+            <strong class="stat__num" aria-hidden="true" data-count="24" data-suffix="/7">24/7</strong>
+            <span class="stat__label" aria-hidden="true">AI guide in your pocket</span>
+          </li>
+          <li class="stat">
+            <span class="sr-only">Under 10 seconds to a full-day plan</span>
+            <strong class="stat__num" aria-hidden="true" data-count="10" data-prefix="&lt;" data-suffix="s">&lt;10s</strong>
+            <span class="stat__label" aria-hidden="true">to a full-day plan</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3. How it works -->
+    <section class="section" id="how" aria-labelledby="how-title">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow">How it works</p>
+          <h2 id="how-title">From a vague idea to a perfect day, in three steps</h2>
+        </header>
+
+        <ol class="steps">
+          <li class="card step">
+            <span class="step__num" aria-hidden="true">01</span>
+            <div class="step__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28"><path d="M4 5h16v11H8l-4 4V5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 10h.01M12 10h.01M16 10h.01" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Tell your vibe</h3>
+            <p>Chat like you would with a friend who lives here. Beaches or ruins, slow or packed, budget or splurge.</p>
+          </li>
+          <li class="card step">
+            <span class="step__num" aria-hidden="true">02</span>
+            <div class="step__icon step__icon--orange" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 4v14M15 6v14" stroke="currentColor" stroke-width="1.8"/></svg>
+            </div>
+            <h3>Get your plan</h3>
+            <p>Traivio builds a day-by-day itinerary with timings, drive times, local food picks and spots most tourists miss.</p>
+          </li>
+          <li class="card step">
+            <span class="step__num" aria-hidden="true">03</span>
+            <div class="step__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Explore and adapt</h3>
+            <p>Rain in Nicosia? Running late? Just ask. Your plan reshuffles in real time around the weather and your energy.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 4. Interactive demo -->
+    <section class="section section--alt" id="demo" aria-labelledby="demo-title">
+      <div class="glow glow--teal glow--demo" aria-hidden="true"></div>
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow">Try it</p>
+          <h2 id="demo-title">Build a sample trip in one click</h2>
+          <p class="section__sub">Pick what you love, choose a trip length and watch Traivio sketch a plan.</p>
+        </header>
+
+        <div class="demo card">
+          <div class="demo__controls">
+            <fieldset class="demo__group">
+              <legend>What are you into?</legend>
+              <div class="chips" id="chips">
+                <button type="button" class="chip" data-interest="beaches" aria-pressed="false">🏖️ Beaches</button>
+                <button type="button" class="chip" data-interest="history" aria-pressed="false">🏛️ History</button>
+                <button type="button" class="chip" data-interest="food" aria-pressed="false">🥙 Food</button>
+                <button type="button" class="chip" data-interest="nightlife" aria-pressed="false">🍸 Nightlife</button>
+                <button type="button" class="chip" data-interest="nature" aria-pressed="false">🌿 Nature</button>
+                <button type="button" class="chip" data-interest="gems" aria-pressed="false">💎 Hidden gems</button>
+              </div>
+            </fieldset>
+
+            <fieldset class="demo__group">
+              <legend>Trip length</legend>
+              <div class="segmented" role="radiogroup" aria-label="Trip length" id="duration">
+                <button type="button" role="radio" aria-checked="true" data-days="1" class="is-active">1 day</button>
+                <button type="button" role="radio" aria-checked="false" data-days="3">3 days</button>
+                <span class="segmented__pill" aria-hidden="true"></span>
+              </div>
+            </fieldset>
+
+            <button type="button" class="btn btn--primary btn--lg demo__generate" id="generate">
+              <span aria-hidden="true">✨</span> Generate itinerary
+            </button>
+            <p class="demo__hint" id="demo-hint">Tip: nothing selected? We'll surprise you with a bit of everything.</p>
+          </div>
+
+          <div class="demo__output" aria-live="polite" aria-busy="false" id="demo-output">
+            <div class="demo__placeholder" id="demo-placeholder">
+              <span class="demo__placeholder-icon" aria-hidden="true">🗺️</span>
+              <p>Your itinerary will appear here.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Destinations -->
+    <section class="section" id="destinations" aria-labelledby="dest-title">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow">Destinations</p>
+          <h2 id="dest-title">Places Traivio knows inside out</h2>
+        </header>
+
+        <div class="dest-grid">
+          <article class="dest">
+            <div class="dest__photo dest__photo--kyrenia" role="img" aria-label="Illustration of Kyrenia Harbour at golden hour"><span aria-hidden="true">⛵</span></div>
+            <div class="dest__body">
+              <span class="tag tag--teal">Coastal</span>
+              <h3>Kyrenia Harbour</h3>
+              <p>A horseshoe harbour of fishing boats, castle walls and seafront meze.</p>
+            </div>
+          </article>
+          <article class="dest">
+            <div class="dest__photo dest__photo--bellapais" role="img" aria-label="Illustration of Bellapais Abbey among hills"><span aria-hidden="true">🏛️</span></div>
+            <div class="dest__body">
+              <span class="tag tag--orange">History</span>
+              <h3>Bellapais Abbey</h3>
+              <p>Gothic arches above the coast, with lemon groves and village cafés.</p>
+            </div>
+          </article>
+          <article class="dest">
+            <div class="dest__photo dest__photo--hilarion" role="img" aria-label="Illustration of St. Hilarion Castle on a mountain ridge"><span aria-hidden="true">🏰</span></div>
+            <div class="dest__body">
+              <span class="tag tag--violet">Views</span>
+              <h3>St. Hilarion Castle</h3>
+              <p>A fairytale castle on the ridge, said to have inspired Disney.</p>
+            </div>
+          </article>
+          <article class="dest">
+            <div class="dest__photo dest__photo--famagusta" role="img" aria-label="Illustration of Famagusta old town walls"><span aria-hidden="true">🧱</span></div>
+            <div class="dest__body">
+              <span class="tag tag--orange">Old town</span>
+              <h3>Famagusta &amp; Salamis</h3>
+              <p>Venetian walls, a cathedral-turned-mosque and ancient Roman ruins.</p>
+            </div>
+          </article>
+          <article class="dest">
+            <div class="dest__photo dest__photo--karpaz" role="img" aria-label="Illustration of Golden Beach on the Karpaz Peninsula"><span aria-hidden="true">🫏</span></div>
+            <div class="dest__body">
+              <span class="tag tag--teal">Wild nature</span>
+              <h3>Karpaz &amp; Golden Beach</h3>
+              <p>Endless dunes, wild donkeys and the island's most untouched shore.</p>
+            </div>
+          </article>
+          <article class="dest">
+            <div class="dest__photo dest__photo--nicosia" role="img" aria-label="Illustration of Nicosia old town at dusk"><span aria-hidden="true">🕌</span></div>
+            <div class="dest__body">
+              <span class="tag tag--violet">Culture</span>
+              <h3>Nicosia (Lefkoşa)</h3>
+              <p>Ottoman caravanserais, bazaar lanes and the world's last divided capital.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Features -->
+    <section class="section section--alt" id="features" aria-labelledby="features-title">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow">Features</p>
+          <h2 id="features-title">Everything a local friend would tell you</h2>
+        </header>
+
+        <div class="features">
+          <article class="card feature">
+            <div class="feature__icon" aria-hidden="true">📶</div>
+            <h3>Offline-friendly plans</h3>
+            <p>Your itinerary, maps and notes stay available in mountain villages with no signal.</p>
+          </article>
+          <article class="card feature">
+            <div class="feature__icon" aria-hidden="true">🥙</div>
+            <h3>Local food picks</h3>
+            <p>Hellim, şeftali kebab and fresh fish from family-run spots, not tourist traps.</p>
+          </article>
+          <article class="card feature">
+            <div class="feature__icon" aria-hidden="true">💶</div>
+            <h3>Budget mode</h3>
+            <p>Set a daily budget and get free sights, fair-price eats and money-saving tips.</p>
+          </article>
+          <article class="card feature">
+            <div class="feature__icon" aria-hidden="true">🗣️</div>
+            <h3>Multilingual: EN / RU / TR</h3>
+            <p>Plan in English, Russian or Turkish, with handy local phrases built in.</p>
+          </article>
+          <article class="card feature">
+            <div class="feature__icon" aria-hidden="true">🌦️</div>
+            <h3>Real-time weather adaptation</h3>
+            <p>Heatwave at noon or wind on the coast? Traivio swaps stops so your day still works.</p>
+          </article>
+          <article class="card feature">
+            <div class="feature__icon" aria-hidden="true">🔗</div>
+            <h3>Save &amp; share trips</h3>
+            <p>Keep your favourite plans and share them with travel buddies in one link.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Pricing -->
+    <section class="section" id="pricing" aria-labelledby="pricing-title">
+      <div class="glow glow--orange glow--pricing" aria-hidden="true"></div>
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow">Pricing</p>
+          <h2 id="pricing-title">Simple pricing, no surprises</h2>
+        </header>
+
+        <div class="billing" role="radiogroup" aria-label="Billing period" id="billing">
+          <button type="button" role="radio" aria-checked="true" data-period="monthly" class="is-active">Monthly</button>
+          <button type="button" role="radio" aria-checked="false" data-period="yearly">Yearly <span class="badge">Save 50%</span></button>
+          <span class="segmented__pill" aria-hidden="true"></span>
+        </div>
+
+        <div class="plans">
+          <article class="card plan-card">
+            <h3>Free</h3>
+            <p class="plan-card__desc">For a quick weekend escape.</p>
+            <p class="price"><span class="price__amount">€0</span><span class="price__per">forever</span></p>
+            <ul class="checklist">
+              <li>1-day itineraries</li>
+              <li>10 AI chat messages a day</li>
+              <li>Top destinations guide</li>
+              <li>English interface</li>
+            </ul>
+            <a href="#waitlist" class="btn btn--ghost btn--block">Join free</a>
+          </article>
+
+          <article class="card plan-card plan-card--pro glow-border">
+            <span class="plan-card__ribbon">Most popular</span>
+            <h3>Pro</h3>
+            <p class="plan-card__desc">For travelers who want the whole island.</p>
+            <p class="price">
+              <span class="price__amount" id="pro-price">€4.99</span>
+              <span class="price__per" id="pro-per">/ month</span>
+            </p>
+            <p class="price__note" id="pro-note">Billed monthly. Cancel anytime.</p>
+            <ul class="checklist">
+              <li>Unlimited multi-day itineraries</li>
+              <li>Unlimited AI chat &amp; live re-planning</li>
+              <li>Hidden gems &amp; local food picks</li>
+              <li>Offline plans &amp; budget mode</li>
+              <li>EN / RU / TR support</li>
+              <li>Save &amp; share trips</li>
+            </ul>
+            <a href="#waitlist" class="btn btn--primary btn--block">Get early access</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. FAQ -->
+    <section class="section section--alt" id="faq" aria-labelledby="faq-title">
+      <div class="container container--narrow">
+        <header class="section__head">
+          <p class="eyebrow">FAQ</p>
+          <h2 id="faq-title">Questions, answered</h2>
+        </header>
+
+        <div class="faq" id="faq-list">
+          <div class="faq__item">
+            <h3><button class="faq__q" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">When does Traivio launch?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq__a" id="faq-a1" role="region" aria-labelledby="faq-q1" hidden><p>We're in private beta now and opening to the waitlist in waves through spring 2027, ahead of the summer season.</p></div>
+          </div>
+          <div class="faq__item">
+            <h3><button class="faq__q" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">How is this different from a regular guidebook?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq__a" id="faq-a2" role="region" aria-labelledby="faq-q2" hidden><p>Guidebooks are the same for everyone. Traivio builds a plan around your interests, pace and budget, and changes it on the go when the weather or your mood changes.</p></div>
+          </div>
+          <div class="faq__item">
+            <h3><button class="faq__q" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">Does it work without mobile data?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq__a" id="faq-a3" role="region" aria-labelledby="faq-q3" hidden><p>Yes. Saved itineraries, maps and notes are available offline. You only need a connection for live chat and re-planning.</p></div>
+          </div>
+          <div class="faq__item">
+            <h3><button class="faq__q" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">Which languages are supported?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq__a" id="faq-a4" role="region" aria-labelledby="faq-q4" hidden><p>English, Russian and Turkish at launch. You can switch at any time, and plans include useful local phrases.</p></div>
+          </div>
+          <div class="faq__item">
+            <h3><button class="faq__q" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">Can I cancel Pro anytime?<span class="faq__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq__a" id="faq-a5" role="region" aria-labelledby="faq-q5" hidden><p>Of course. Cancel in one tap and keep Pro until the end of your billing period. Your saved trips stay with you on the Free plan.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Final CTA -->
+    <section class="section cta" id="waitlist" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta__box">
+          <div class="glow glow--teal glow--cta" aria-hidden="true"></div>
+          <div class="glow glow--orange glow--cta2" aria-hidden="true"></div>
+          <h2 id="cta-title">Be first to explore North Cyprus with <span class="grad">Traivio</span></h2>
+          <p class="section__sub">Join the waitlist for early access and 3 months of Pro, free.</p>
+
+          <form class="waitlist" id="waitlist-form" novalidate>
+            <label for="email" class="sr-only">Email address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required aria-describedby="email-error">
+            <button type="submit" class="btn btn--primary">Join waitlist</button>
+          </form>
+          <p class="waitlist__error" id="email-error" role="alert"></p>
+          <div class="waitlist__success" id="waitlist-success" hidden tabindex="-1">
+            <span class="waitlist__check" aria-hidden="true">✓</span>
+            <div>
+              <p class="waitlist__success-title">You're on the list!</p>
+              <p>We'll email <strong id="success-email"></strong> as soon as your spot opens up. Görüşürüz! 👋</p>
+            </div>
+          </div>
+          <p class="cta__fine">No spam. Unsubscribe anytime.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 10. Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#top" class="logo" aria-label="Traivio home">
+          <span class="logo__mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="26" height="26"><defs><linearGradient id="lg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3c5"/><stop offset="1" stop-color="#ff8a4c"/></linearGradient></defs><rect width="32" height="32" rx="9" fill="url(#lg2)"/><path d="M9 11h14M16 11v12" stroke="#070d1f" stroke-width="3.2" stroke-linecap="round"/></svg>
+          </span>
+          <span class="logo__text">Traivio</span>
+        </a>
+        <p>Your personal AI guide to North Cyprus.</p>
+      </div>
+      <nav class="footer__cols" aria-label="Footer">
+        <div>
+          <h4>Product</h4>
+          <a href="#how">How it works</a>
+          <a href="#demo">Demo</a>
+          <a href="#features">Features</a>
+          <a href="#pricing">Pricing</a>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <a href="#destinations">Destinations</a>
+          <a href="#faq">FAQ</a>
+          <a href="#waitlist">Waitlist</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="#top">About</a>
+          <a href="#top">Privacy</a>
+          <a href="#top">Terms</a>
+        </div>
+      </nav>
+    </div>
+    <div class="container footer__bottom">
+      <p>© 2026 Traivio. All rights reserved.</p>
+      <p>Made with ☀️ in the Mediterranean</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
